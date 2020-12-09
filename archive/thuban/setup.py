@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 from matplotlib import cm
 rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
-rc('text', usetex=True)
+rc('text', usetex=False)
 
 from matplotlib import rcParams
 
