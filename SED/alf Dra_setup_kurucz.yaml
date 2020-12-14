@@ -1,0 +1,44 @@
+
+# photometry file with index to the columns containing the photbands, observations and errors
+objectname: alf Dra
+photometryfile: alf Dra.phot
+photband_index: band
+obs_index: flux
+err_index: eflux
+photband_exclude: ['GALEX', 'SDSS']
+# parameters to fit and the limits on them in same order as parameters
+pnames: [teff, logg, rad, ebv]
+limits: 
+- [3500, 11000]
+- [2.5, 4.32]
+- [3, 7]
+- [0, 0.1]
+# constraints on distance and mass ratio is known
+constraints: 
+  parallax: [12.1823, 0.3171]
+  teff: [9975, 125]
+  logg: [3.63, 0.2]
+  rad: [4.42, 0.1]
+# added constraints on derived properties as mass, luminosity, luminosity ratio
+derived_limits: {}
+# path to the model grids with integrated photometry
+grids: 
+- kurucz
+# setup for the MCMC algorithm
+nwalkers: 100    # total number of walkers
+nsteps: 1000     # steps taken by each walker (not including burn-in)
+nrelax: 250   # burn-in steps taken by each walker
+a: 10            # relative size of the steps taken
+# set the percentiles for the error determination 
+percentiles: [0.2, 50, 99.8] # 16 - 84 corresponds to 1 sigma
+# output options
+resultfile: alf Dra_results_kurucz.csv   # filepath to write results
+plot1:
+ type: sed_fit
+ result: best
+ path: alf Dra_sed_kurucz.png
+plot2:
+ type: distribution
+ show_best: true
+ path: alf Dra_distribution_kurucz.png
+ parameters: ['teff', 'rad', 'L', 'ebv', 'd', 'mass', 'logg']
