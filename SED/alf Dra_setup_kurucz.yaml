@@ -9,9 +9,9 @@ photband_exclude: ['GALEX', 'SDSS']
 # parameters to fit and the limits on them in same order as parameters
 pnames: [teff, logg, rad, ebv]
 limits: 
-- [3500, 11000]
+- [3500, 15000]
 - [2.5, 4.32]
-- [3, 7]
+- [2, 7]
 - [0, 0.1]
 # constraints on distance and mass ratio is known
 constraints: 
